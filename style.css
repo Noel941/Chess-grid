@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #2a363b;
+    place-items: center;
+
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+}
+
+i {
+    font-size: 3vw;
+    padding: 20%;
+}
+
+h1 {
+    color: #f95959;
+}
+
+button {
+    display: block;
+    margin-left: 10%;
+    color: #a55233;
+    font-size: 2vw;
+    border: none;
+    background: none;
+}
+
+button:hover {
+    cursor: pointer;
+    color: #f0ab8d;
+}
+
+.head {
+    width: min(100vh, 50vw);
+    height: min(100vh, 100vw);
+    align-content: center;
+    font-size: 2vw;
+    margin-left: 10%;
+}
+
+.board {
+    width: min(100vh, 100vw);
+    height: min(100vh, 100vw);
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    text-align: center;
+    gap: 0;
+    padding: 5%;
+}
+
+.box1 {
+    border: 1px solid black;
+    font-size: 4vw;
+}
+
+.box2 {
+    border: 1px solid black;
+    font-size: 4vw;
+}
+
+.box1:nth-child(odd) {
+    background-color: #855E42;
+}
+
+.box1:nth-child(even) {
+    background-color: #C1AD9E;
+}
+
+.box2:nth-child(odd) {
+    background-color: #C1AD9E;
+}
+
+.box2:nth-child(even) {
+    background-color: #855E42;
+}
+
+#pawn-black-move:hover {
+    cursor: pointer;
+    color: #292830;
+}
+
+#pawn-black-move {
+    color: #2a363b;
+    position: relative;
+    animation-name: pawn;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+@keyframes pawn {
+    0% {
+        top: 0%;
+    }
+
+    25% {
+        top: 0%;
+    }
+
+    50% {
+        top: 100%;
+    }
+
+    75% {
+        top: 200%;
+    }
+
+    100% {
+        top: 200%;
+    }
+}
+
+
+#black-rook-move {
+    color: #2a363b;
+    position: relative;
+    animation-name: rook;
+    animation-duration: 4s;
+    animation-delay: 4s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+@keyframes rook {
+    0% {
+        left: 0%;
+        top: 0%;
+    }
+
+    25% {
+        left: 0%;
+        top: 500%;
+    }
+
+    50% {
+        left: 700%;
+        top: 500%;
+    }
+
+    75% {
+        left: 0%;
+        top: 500%;
+    }
+
+    100% {
+        left: 0%;
+        top: 0%;
+    }
+}
+
+
+#black-knight-move {
+    color: #2a363b;
+    position: relative;
+    animation-name: knight;
+    animation-duration: 4s;
+    animation-delay: 8s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes knight {
+    0% {
+        left: 0%;
+        top: 0%;
+    }
+
+    25% {
+        left: 0%;
+        top: 200%;
+    }
+
+    50% {
+        left: 100%;
+        top: 200%;
+    }
+
+    75% {
+        left: 0%;
+        top: 200%;
+    }
+
+    100% {
+        left: 0%;
+        top: 0%;
+    }
+}
+
+#black-bishop-move {
+    color: #2a363b;
+    position: relative;
+    animation-name: bishop;
+    animation-duration: 4s;
+    animation-delay: 12s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bishop {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(675%, 525%);
+    }
+}
+
+#black-queen-move {
+    color: #2a363b;
+    position: relative;
+    animation-name: queen;
+    animation-duration: 8s;
+    animation-delay: 16s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards
+}
+
+@keyframes queen {
+    0% {
+        top: 0rem;
+    }
+
+    20% {
+        top: 500%;
+        right: 0rem;
+    }
+
+    40% {
+        right: 300%;
+        top: 500%;
+        transform: translate(0, 0);
+    }
+
+
+    60% {
+        transform: translate(300%, -300%);
+        right: 300%;
+        top: 500%;
+    }
+
+
+    80% {
+        transform: translate(0px, 0px);
+        right: 300%;
+        top: 500%;
+    }
+
+
+    100% {
+        right: 300%;
+        top: 500%;
+    }
+}
+
+
+#black-king-move {
+    color: #2a363b;
+    position: relative;
+    animation-name: king;
+    animation-duration: 8s;
+    animation-delay: 22.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes king {
+    0% {
+        top: 0%;
+    }
+
+    10% {
+        top: 100%;
+    }
+
+    20% {
+        top: 0%;
+        transform: translate(0, 0);
+    }
+
+    40% {
+        transform: translate(-100%, 100%);
+    }
+
+    60% {
+        transform: translate(0, 0);
+        right: 0%;
+        top: 0%;
+    }
+
+    80% {
+        right: 100%;
+        top: 0%;
+    }
+
+    100% {
+        right: 0%;
+        top: 0%;
+    }
+}
